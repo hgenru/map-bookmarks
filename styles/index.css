@@ -19,7 +19,7 @@ body *
     background-repeat: no-repeat;
     background-position: center;
     background-color: black;
-    animation: hideout 10s;
+    animation: hideout 7s;
     animation-timing-fucntion: ease-out;
 }
 
