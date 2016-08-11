@@ -8,6 +8,26 @@ body *
     box-sizing: border-box;
 }
 
+.splashscreen
+{
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../resources/map-bookmarks-bg.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    animation: hideout 7s;
+    animation-timing-function: cubic-bezier(1, 0.63, 1, 1);
+}
+
+@keyframes hideout {
+    from {opacity: 1;}
+    to {opacity: 0.1;}
+} 
+
 #map
 {
     position: absolute;
@@ -46,4 +66,5 @@ body *
     outline: none;
     background: url(../resources/map-icons/radar_waypoint.png);
     background-size: contain;
+    background-color: white;
 }

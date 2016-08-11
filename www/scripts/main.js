@@ -20,8 +20,8 @@ AppViewModel.prototype.initMap = function() {
     this.map = new mapboxgl.Map({
         container: 'map', // container id
         style: 'mapbox://styles/mapbox/streets-v9', //stylesheet location
-        center: [-74.50, 40], // starting position
-        zoom: 9, // starting zoom
+        center: [37.5914271, 55.7372329], // starting position
+        zoom: 12, // starting zoom
         attributionControl: false
     });
     this.map.addControl(new mapboxgl.Navigation());
@@ -71,6 +71,10 @@ window.m_site = new AppViewModel();
 ko.applyBindings(window.m_site);
 window.m_site.initMap();
 window.m_site.initPoistionWatch();
+setTimeout(function() {
+    var element = document.querySelector('.splashscreen');
+    element.remove();
+}, 7000);
 
 
 
@@ -81,43 +85,36 @@ var geojson = {
             'type': 'Feature',
             'properties': {
                 'message': 'Foo',
-                'iconSize': [60, 60],
-                'icon': 'arrow'
+                'iconSize': [40, 40],
+                'icon': 'radar_ammugun'
             },
             'geometry': {
                 'type': 'Point',
-                'coordinates': [
-                    -66.324462890625,
-                    -16.024695711685304
-                ]
+                'coordinates': [37.614289, 55.743434]
             }
         },
         {
             'type': 'Feature',
             'properties': {
                 'message': 'Bar',
-                'iconSize': [50, 50]
+                'iconSize': [40, 40],
+                'icon': 'radar_dateDrink'
             },
             'geometry': {
                 'type': 'Point',
-                'coordinates': [
-                    -61.2158203125,
-                    -15.97189158092897
-                ]
+                'coordinates': [37.620350, 55.741266]
             }
         },
         {
             'type': 'Feature',
             'properties': {
                 'message': 'Baz',
-                'iconSize': [40, 40]
+                'iconSize': [40, 40],
+                'icon': 'radar_diner'
             },
             'geometry': {
                 'type': 'Point',
-                'coordinates': [
-                    -63.29223632812499,
-                    -18.28151823530889
-                ]
+                'coordinates': [37.617365, 55.732852]
             }
         }
     ]
@@ -140,15 +137,11 @@ function getMarker(feature) {
     return marker;
 }
 
-// geojson.features.forEach(function(marker) {
-//     // create an img element for the marker
-//     var el = getMarkerElement(marker);
-
-//     // add marker to map
-//     new mapboxgl.Marker(el)
-//         .setLngLat(marker.geometry.coordinates)
-//         .addTo(map);
-// });
+geojson.features.forEach(function(marker) {
+    // add marker to map
+    var marker = getMarker(marker);
+    marker.addTo(m_site.map);
+});
 
 function locaionToPoint(location) {
     return {
