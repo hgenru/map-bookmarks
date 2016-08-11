@@ -46,4 +46,5 @@ body *
     outline: none;
     background: url(../resources/map-icons/radar_waypoint.png);
     background-size: contain;
+    background-color: white;
 }

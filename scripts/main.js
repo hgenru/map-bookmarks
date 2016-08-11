@@ -20,7 +20,7 @@ AppViewModel.prototype.initMap = function() {
     this.map = new mapboxgl.Map({
         container: 'map', // container id
         style: 'mapbox://styles/mapbox/streets-v9', //stylesheet location
-        center: [-74.50, 40], // starting position
+        center: [37.5914271, 55.7372329], // starting position
         zoom: 9, // starting zoom
         attributionControl: false
     });
