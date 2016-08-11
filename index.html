@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Enable all requests, inline styles, and eval() -->
+    <meta http-equiv="Content-Security-Policy" content="img-src * data: blob:; default-src * blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <title></title>
+    <script src="vendor/knockout.js"></script>
+    <script src="vendor/mapbox-gl/mapbox-gl.js"></script>
+    <link href="vendor/mapbox-gl/mapbox-gl.css" rel="stylesheet"/>
+    <!-- main -->
+    <link rel="stylesheet" href="styles/index.css" />
+</head>
+<body>
+    <div id="map"></div>
+
+    <div class="controls">
+        <button class="locate-button" data-bind="click: function() {flyToCurrentLocation();}"></button>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
