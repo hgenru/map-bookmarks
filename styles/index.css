@@ -21,12 +21,11 @@ body *
     background-color: black;
     animation: hideout 10s;
     animation-timing-fucntion: ease-out;
-    opacity: 0.5;
 }
 
 @keyframes hideout {
     from {opacity: 1;}
-    to {opacity: 0.5;}
+    to {opacity: 0.3;}
 } 
 
 #map
