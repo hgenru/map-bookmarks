@@ -71,6 +71,10 @@ window.m_site = new AppViewModel();
 ko.applyBindings(window.m_site);
 window.m_site.initMap();
 window.m_site.initPoistionWatch();
+setTimeout(function() {
+    var element = document.querySelector('.splashscreen');
+    element.remove();
+}, 7000);
 
 
 

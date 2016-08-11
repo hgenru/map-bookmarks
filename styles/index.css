@@ -8,6 +8,27 @@ body *
     box-sizing: border-box;
 }
 
+.splashscreen
+{
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../resources/map-bookmarks-bg.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    animation: hideout 10s;
+    animation-timing-fucntion: ease-out;
+    opacity: 0.5;
+}
+
+@keyframes hideout {
+    from {opacity: 1;}
+    to {opacity: 0.5;}
+} 
+
 #map
 {
     position: absolute;
