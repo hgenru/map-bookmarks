@@ -19,6 +19,18 @@
 <body>
     <div class="splashscreen"></div>
 
+    <!-- ko if: !welcomeMessageSkipped() -->
+    <div class="welcomescreen">
+        <div class="welcomemessage">
+            <p>ОХЛАДИ ТРАХАНИЕ УГЛЕПЛАСТИК</p>
+
+            <p>ЭТО ПРИЛОЖЕНИЕ ЗНАЕТ ПАРНЕЙ КОТОРЫЕ ДЕЛАЮТ МЕДВЕДЬ ЗАКЛАДКИ ПРЯМО НА ТВОЁМ ГОРОДЕ</p>
+
+            <h1 style="margin-top: 50px" class="welcomemessage__skip" data-bind="click: function() {skipWelcomeMessage();}">РАССМАТРИВАЮ ПОЛЬЗУ</h1>
+        </div>
+    </div>
+    <!-- /ko -->
+
     <div id="map"></div>
 
     <div class="controls">
