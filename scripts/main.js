@@ -1,6 +1,7 @@
 function AppViewModel() {
     this.map = null;
     this.currentLocation = ko.observable(null);
+    this.welcomeMessageSkipped = ko.observable(localStorage.welcomeMessageSkipped);
 
     this.myMarker = getMarker({
         'type': 'Feature',
@@ -21,7 +22,8 @@ AppViewModel.prototype.initMap = function() {
         container: 'map', // container id
         style: 'mapbox://styles/mapbox/streets-v9', //stylesheet location
         center: [37.5914271, 55.7372329], // starting position
-        zoom: 12, // starting zoom
+        zoom: 12, // starting zoom,
+        minZoom: 11,
         attributionControl: false
     });
     this.map.addControl(new mapboxgl.Navigation());
@@ -61,8 +63,13 @@ AppViewModel.prototype.initPoistionWatch = function() {
 
 AppViewModel.prototype.flyToCurrentLocation = function() {
     if (this.currentLocation()) {
-        this.map.flyTo({center: this.currentLocation()});
+        this.map.flyTo({center: this.currentLocation(), zoom: 12});
     }
+};
+
+AppViewModel.prototype.skipWelcomeMessage = function() {
+    localStorage.welcomeMessageSkipped = true;
+    this.welcomeMessageSkipped(true);
 };
 
 
