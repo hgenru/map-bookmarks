@@ -1,7 +1,7 @@
 function AppViewModel() {
     this.map = null;
     this.currentLocation = ko.observable(null);
-    this.welcomeMessageSkipped = ko.observable(localStorage.welcomeMessageSkipped);
+    this.welcomeMessageSkipped = ko.observable(false);
 
     this.myMarker = getMarker({
         'type': 'Feature',
@@ -68,7 +68,6 @@ AppViewModel.prototype.flyToCurrentLocation = function() {
 };
 
 AppViewModel.prototype.skipWelcomeMessage = function() {
-    localStorage.welcomeMessageSkipped = true;
     this.welcomeMessageSkipped(true);
 };
 
