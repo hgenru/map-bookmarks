@@ -92,11 +92,11 @@ var geojson = {
             'properties': {
                 'message': 'Foo',
                 'iconSize': [40, 40],
-                'icon': 'radar_ammugun'
+                'icon': 'radar_dateDrink'
             },
             'geometry': {
                 'type': 'Point',
-                'coordinates': [37.614289, 55.743434]
+                'coordinates': [37.591379, 55.734045]
             }
         },
         {
@@ -104,11 +104,11 @@ var geojson = {
             'properties': {
                 'message': 'Bar',
                 'iconSize': [40, 40],
-                'icon': 'radar_dateDrink'
+                'icon': 'radar_ammugun'
             },
             'geometry': {
                 'type': 'Point',
-                'coordinates': [37.620350, 55.741266]
+                'coordinates': [37.592147, 55.722926]
             }
         },
         {
@@ -120,7 +120,19 @@ var geojson = {
             },
             'geometry': {
                 'type': 'Point',
-                'coordinates': [37.617365, 55.732852]
+                'coordinates': [37.576564, 55.728154]
+            }
+        },
+        {
+            'type': 'Feature',
+            'properties': {
+                'message': 'Baz',
+                'iconSize': [40, 40],
+                'icon': 'radar_heart'
+            },
+            'geometry': {
+                'type': 'Point',
+                'coordinates': [37.552173, 55.725967]
             }
         }
     ]
